@@ -3,8 +3,13 @@
 <head>
 <title>Widget</title>
 </head>
+ 
+ <!--- Задает фоновый рисунок на веб-странице..-->
 <body style="background-image:url(http://patcreator.appspot.com/imgs/textures/light/light-texture-01.jpg)">
 <p></p>
+ 
+ <!--- Расположение - по центру, цвет текста в HEX, размер шрифта в пикселях.-->
+ <!--- Br - перевод строки в том месте, где этот тег находится, а P - тег абзаца, добавляет пустой отступ перед строкой.-->
 <p align="center" style="color:#ff1119; font-size:30px"> Oops, this page is <i>empty.</i>  </p>
 <br> 
 <p align="center"> <img src="https://i.imgflip.com/ced64.jpg" align="center" width="310" height="174"/> </p>
@@ -14,7 +19,7 @@
 
  
  <!--- С помощью тега <label> задаются метки элементам формы.-->
- <form action="#">
+ <form action="action.php">
   <h6>Do you want to help me?</h6>
   <input type="radio" id="id1" />
   <label for="id1">Yes, what can I do for you?</label>
@@ -24,16 +29,6 @@
   <br />
   <input type="radio" id="id3" />
   <label for="id3">Sorry, I am here just by accident</label><br><br>
-  <input type="submit" value="Submit">
-</form>
- 
- <form action="/action_page.php">
-  <label for="male">Male</label>
-  <input type="radio" name="gender" id="male" value="male"><br>
-  <label for="female">Female</label>
-  <input type="radio" name="gender" id="female" value="female"><br>
-  <label for="other">Other</label>
-  <input type="radio" name="gender" id="other" value="other"><br><br>
   <input type="submit" value="Submit">
 </form>
 
