@@ -1,19 +1,69 @@
-<!DOCTYPE HTML>
+
+<!DOCTYPE html>
 <html>
- <head>
- <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>OV test</title>
- </head>
- <body>
+  <head>
+    <title>Open Voice Iframe Test</title>
+<style>
+body {
+  margin: 0;
+  padding: 0;
+  background: black;
+}
+.content {
+  margin: auto;
+  max-width: 1200px;
+  background: white;
+  display: flex;
+    flex-flow: row nowrap;
+}
+.left-sidebar {
+  background: blue;
+  height: 3000px;
+  width: 200px;
+}
+.right-sidebar {
+  background: pink;
+  height: 3000px;
+  width: 300px;
+}
+nav {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 100px;
+  background: blue;
+}
+article {
+  max-width: 650px;
+}
+</style>
+  </head>
+  <body>
+    <nav>
+      Sample header navigation.
+    </nav>
+    <div class="content">
+    <section class="left-sidebar">Sidebar on the left</section>
+    <article>
+      <a href="#open-voice">Go to Open Voice Widget</a>
+      <header>
+        <h1>Don't worry, here is just the sample article</h1>
+      </header>
 
+<p> "You can't market to the world with a niche business, so you want to make sure you are meeting the needs of your particular clientele," Fairbrother says. "Without that, you are working in the dark."</p>
+<p> Finding out your customers' needs can be done in a variety of ways. Conduct customer focus groups with five to 10 people, ultimately talking to about 100 individuals, who can tell you what kinds of products or services they want, how they want them delivered, what's missing from what is already available and how much they are willing to pay, Kase says. Next, create a survey. A trade or professional association in your field may be able to sell you a list of individuals or companies you can interview, either locally, nationally or both. Expect a 10 percent response rate--which translates into 10 completed surveys for every 100 sent out, Fairbrother says. You can also query potential customers at trade-association or group meetings devoted to your niche.</p>
 
-<iframe 
-  id="open-voice-iframe" 
-  allowfullscreen 
-  scrolling="no"
-src="//vdb-cdn-files.s3.amazonaws.com/stage/open-voice/static/index.html#/5974bb3f8577b200011b6cb5/123451234512345123451234/desktop"
-  style="overflow: hidden; z-index: 999999999999; height: 250px; width: 100%; padding: 0; margin: 0; outline: 0; border: none; box-shadow: 0 8px 69px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);"></iframe>
-  
-  
+<p> "If you are selling products just for birds, ask your local pet shop for the name of a local bird-lover's group," Fairbrother says. "Ask these people what products they need most and how yours can fit in. Go one step further and attend trade shows for bird-lovers, and talk to the masses."</p>
+      <a name="open-voice"></a>
+
+      <p>Aenean vel risus commodo, hendrerit arcu scelerisque, pulvinar felis. Duis commodo risus erat, at pharetra purus fringilla id. Vestibulum commodo venenatis tempor. Curabitur aliquam hendrerit finibus. Sed eu odio sodales dolor vulputate vehicula. Quisque ex dui, egestas non orci sed, blandit pretium velit. Nam commodo libero sagittis ultricies rhoncus. Ut lobortis, ante vel pretium hendrerit, arcu ex hendrerit tortor, vel molestie enim nisi non turpis. Morbi scelerisque mi risus, sit amet venenatis tortor consectetur non.</p>
+      <!-- <iframe class="open-voice-iframe" style="height: 150px; width: 100%; padding: 0; margin: 0; outline: 0; border: none; box-shadow: 0 8px 69px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);" allowfullscreen src="//vdb-cdn-files.s3.amazonaws.com/prod/open-voice/static/index.html#/5acb83c029e6e40001d59137/some-yahoo-article/desktop"></iframe> -->
+      <iframe class="open-voice-iframe" allowfullscreen scrolling="no"
+        src="//vdb-cdn-files.s3.amazonaws.com/stage/open-voice/static/index.html#/5974bb3f8577b200011b6cb5/123451234512345123451234/desktop"
+        style="overflow: hidden; z-index: 999999999999; height: 150px; width: 100%; padding: 0; margin: 0; outline: 0; border: none; box-shadow: 0 8px 69px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);" 
+        ></iframe>
+      <!-- <iframe class="open-voice-iframe" style="height: 150px; width: 100%; padding: 0; margin: 0; outline: 0; border: none; box-shadow: 0 8px 69px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);" allowfullscreen src="//localhost:9999/open-voice-iframe.html#/5974bb3f8577b200011b6cb5/123451234512345123451234/desktop"></iframe> -->
+    </article>
+    </div>
   </body>
 </html>
