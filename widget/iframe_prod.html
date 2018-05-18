@@ -1,12 +1,63 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Open Voice Iframe Test</title>
+    <title>OV Prod</title>
+<style>
+body {
+  margin: 0;
+  padding: 0;
+  background: black;
+}
+.content {
+  margin: auto;
+  max-width: 1200px;
+  background: white;
+  display: flex;
+    flex-flow: row nowrap;
+}
+.left-sidebar {
+  background: green;
+  height: 3000px;
+  width: 200px;
+}
+.right-sidebar {
+  background: green;
+  height: 3000px;
+  width: 300px;
+}
+nav {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 100px;
+  background: pink;
+}
+article {
+  max-width: 650px;
+}
+</style>
   </head>
   <body>
+    <nav>
+      Navigation.
+    </nav>
+    <div class="content">
+    <section class="left-sidebar">Sidebar on the left</section>
+      <section class="right-sidebar">Sidebar on the right</section>
+    <article>
+      <a href="#open-voice">Open Voice Widget</a>
+      <header>
+        <h1>Sample article</h1>
+      </header>
 
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur quis sem libero. Mauris ipsum augue, mollis vitae maximus vitae, faucibus non nisi. In id commodo nisi, vel semper neque. Sed imperdiet risus sed nisi iaculis lobortis. Phasellus ut nisi id dui pharetra ultricies id nec nibh. Phasellus id quam id dolor gravida elementum eu ut sem. Maecenas consequat venenatis turpis quis bibendum. Morbi vehicula iaculis tempus. Cras in consequat ex, non feugiat quam. Quisque fermentum tincidunt odio, ut posuere purus venenatis et. Nunc vitae pharetra ipsum, vel dapibus tortor.</p>
 
-<iframe 
+      <p>In a ultrices ante. Nullam nec nunc nec purus vestibulum porta eu vitae erat. Donec eleifend luctus elementum. Mauris blandit justo augue, quis semper odio placerat laoreet. Donec accumsan mattis ultricies. Aenean ultricies eu est eu dignissim. Donec pulvinar faucibus diam quis ultrices. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Maecenas congue neque sed ipsum accumsan ornare. Mauris consequat, libero vitae suscipit fringilla, massa ipsum pharetra quam, sed varius metus tellus nec metus.</p>
+
+      <a name="open-voice"></a>
+
+      <p>Aenean vel risus commodo, hendrerit arcu scelerisque, pulvinar felis. Duis commodo risus erat, at pharetra purus fringilla id. Vestibulum commodo venenatis tempor. Curabitur aliquam hendrerit finibus. Sed eu odio sodales dolor vulputate vehicula. Quisque ex dui, egestas non orci sed, blandit pretium velit. Nam commodo libero sagittis ultricies rhoncus. Ut lobortis, ante vel pretium hendrerit, arcu ex hendrerit tortor, vel molestie enim nisi non turpis. Morbi scelerisque mi risus, sit amet venenatis tortor consectetur non.</p>
+      <iframe 
 id="open-voice-iframe"
 allow="microphone https://vdb-cdn-files.s3.amazonaws.com; camera https://vdb-cdn-files.s3.amazonaws.com"
 allowfullscreen 
@@ -14,5 +65,7 @@ scrolling="no"
 src="//vdb-cdn-files.s3.amazonaws.com/prod/open-voice/static/index.html#/5afd800256533f00010dc23b/123451234512345123451234/desktop"
 style="overflow: hidden; z-index: 999999999999; height: 150px; width: 100%; padding: 0; margin: 0; outline: 0; border: none; box-shadow: 0 8px 69px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);"></iframe>
 
-</body>
+    </article>
+    </div>
+  </body>
 </html>
