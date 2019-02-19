@@ -530,7 +530,73 @@ HPAds.ad_onload('div[id^="ad_leaderboard_flex"] iframe','HPAds.ad_uac_onload_han
 <div id="main" role="main">
 
 
-
+<script type="application/javascript">
+window.maxConfig = {
+     global: {
+         onLoadTimeout: 10, //optional
+         player: {
+           pid: '5c5c100b34f69d0ef5ff20d0', // ASAP: Downpage Desktop : HuffPost Semantic Before you go
+           bcid: '56000e19e4b0e4e194b84b31', // HP
+         },
+         // template that include the "Before you go” wrapper
+         template: `
+         <section class="extra-content yr-extra-content">
+           <div class="extra-content-eyebrow">
+             <div class="extra-content-eyebrow__donut">
+               <img alt="HuffPost" class="extra-content-eyebrow__donut__src" src="https://s.m.huffpost.com/assets/donut-a63d2a21ca5f04f551be212a9496d4deba5d40f4bcb801f34ba14f27bb3bb32a.svg"/>
+             </div>
+             <h4 class="extra-content-eyebrow__text">BEFORE YOU GO</h4>
+           </div>
+        
+           <div class="extra-content__media">
+             <div class="content-list-component embed-asset yr-content-list-embed ">
+               <div id="max-player-injector"></div>
+             </div>
+           </div>
+         </section>`,
+     },
+     strategies: [{
+         //huffpost - before you go with template, when no player other exists on page (autoplay)
+         type: 'INSERT',
+         cssSelector: 'div.entry__content > div.entry__body > div.entry_footer.yr-entry-footer', // writer name footer
+         toggle: false, // keep player in page after video ends
+         insertAfter: false,
+         injectIfPlayerAlreadyExists: false,
+         conditionFunc: () => {
+           const beforeYouGoAlreadyExists = !!document.querySelector('div.entry__content > div.entry__body > section.extra-content.yr-extra-content');
+           if(beforeYouGoAlreadyExists) {
+             return false;
+           }
+           // optionally:
+           // return shouldPresentToCurrentUser(); //HP engineering implementation
+           return true;
+         },
+       },{
+         //huffpost - before you go with template, when other player exits
+         type: 'INSERT',
+         cssSelector: 'div.entry__content > div.entry__body > div.entry_footer.yr-entry-footer', // writer name footer
+         toggle: false, // keep player in page after video ends
+         insertAfter: false,
+         injectIfPlayerAlreadyExists: true, // note this changed
+         player: { //overwrite global.player, add macro - autoplay only when in view
+           pid: '5c5c100b34f69d0ef5ff20d0', // ASAP: Downpage Desktop : HuffPost Semantic Before you go
+           bcid: '56000e19e4b0e4e194b84b31', // HP
+           'm.playback': 'autoplay_when_in_view',
+           'm.autoplayinview': 100,
+         },
+         conditionFunc: () => {
+           const beforeYouGoAlreadyExists = !!document.querySelector('div.entry__content > div.entry__body > section.extra-content.yr-extra-content');
+           if(beforeYouGoAlreadyExists) {
+             return false;
+           }
+           // optionally:
+           // return shouldPresentToCurrentUser(); // HP engineering implementation
+           return true;
+         },
+       }],
+ }
+</script>
+<script src="https://s3.amazonaws.com/vdb-cdn-files/prod/max-suite/34.a2ef451/max.js"></script>
 
 
 <article class="entry js-entry component loaded entry--standard" data-mobilepath="/us/entry/5c6b1233e4b0b9cc78ff507e" data-sharingimage="https://img.huffingtonpost.com/asset/5c6b1dcd2300000401229a18.jpeg?cache=2piewj1gxy&amp;ops=1910_1000" data-sharingtitle="Roger Stone Attacks Judge Presiding Over His Case In Bizarre Instagram Post" data-sharingtweetname="HuffPostPol" data-sharingtweettext="Roger+Stone+posted%2C+then+deleted%2C+an+image+on+Instagram+of+the+judge+in+his+obstruction+case+next+to+an+image+of+what+looked+like+crosshairs." data-sharingurl="https://www.huffpost.com/entry/roger-stone-judge-instagram_n_5c6b1233e4b0b9cc78ff507e" data-socialmessaging="{}" data-yaft-module="" id="us_5c6b1233e4b0b9cc78ff507e" path="/us/entry/us_5c6b1233e4b0b9cc78ff507e" type="article">
