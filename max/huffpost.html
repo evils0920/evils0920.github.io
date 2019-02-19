@@ -581,6 +581,8 @@ window.maxConfig = {
          player: { //overwrite global.player, add macro - autoplay only when in view
            pid: '5c5c100b34f69d0ef5ff20d0', // ASAP: Downpage Desktop : HuffPost Semantic Before you go
            bcid: '56000e19e4b0e4e194b84b31', // HP
+           'm.playback': 'autoplay_when_in_view',
+           'm.autoplayinview': 100,
          },
          conditionFunc: () => {
            const beforeYouGoAlreadyExists = !!document.querySelector('div.entry__content > div.entry__body > section.extra-content.yr-extra-content');
