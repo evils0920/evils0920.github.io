@@ -455,7 +455,7 @@ window.maxConfig = {
      },
      strategies: [{
          //huffpost - before you go with template, when no player other exists on page (autoplay)
-         type: 'INSERT',
+         type: 'REPLACE_ELEMENT',
          cssSelector: 'div.entry__content > div.entry__body > div.entry_footer.yr-entry-footer', // writer name footer
          toggle: false, // keep player in page after video ends
          insertAfter: false,
@@ -471,7 +471,7 @@ window.maxConfig = {
          },
        },{
          //huffpost - before you go with template, when other player exits
-         type: 'INSERT',
+         type: 'REPLACE_ELEMENT',
          cssSelector: 'div.entry__content > div.entry__body > div.entry_footer.yr-entry-footer', // writer name footer
          toggle: false, // keep player in page after video ends
          insertAfter: false,
@@ -834,6 +834,13 @@ p#info-share {
 
 
 <div class="entry_footer yr-entry-footer">
+	<section class="extra-content yr-extra-content">
+<div class="extra-content-eyebrow">
+<div class="extra-content-eyebrow__donut">
+<img alt="HuffPost" class="extra-content-eyebrow__donut__src" src="https://s.m.huffpost.com/assets/donut-a63d2a21ca5f04f551be212a9496d4deba5d40f4bcb801f34ba14f27bb3bb32a.svg">
+</div>
+<h4 class="extra-content-eyebrow__text">BEFORE YOU GO</h4>
+</div>
 
 
 <div class="byline-footer">
