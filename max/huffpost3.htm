@@ -136,14 +136,14 @@ html{font-family:sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:1
 
 </script>
 	
+	<!-- Max injection -->
 	<script type="application/javascript">
 window.maxConfig = {
      global: {
          onLoadTimeout: 10, //optional
          player: {
-	 pid: '5c6ebb2cf79c413288b8b02f', // ASAP: Downpage Desktop : HuffPost Semantic Before you go
-         bcid: '5a1685244bf87a6c8b5419b8', // QA WL
-         },
+           pid: '5c6ebb2cf79c413288b8b02f', // ASAP: Downpage Desktop : HuffPost Semantic Before you go
+           bcid: '5a1685244bf87a6c8b5419b8', // QA WL
          },
          // template that include the "Before you go” wrapper
          template: `
@@ -186,9 +186,8 @@ window.maxConfig = {
          insertAfter: false,
          injectIfPlayerAlreadyExists: true, // note this changed
          player: { //overwrite global.player, add macro - autoplay only when in view
-	 pid: '5c6ebb2cf79c413288b8b02f', // ASAP: Downpage Desktop : HuffPost Semantic Before you go
-         bcid: '5a1685244bf87a6c8b5419b8', // QA WL
-         },
+           pid: '5c5c100b34f69d0ef5ff20d0', // ASAP: Downpage Desktop : HuffPost Semantic Before you go
+           bcid: '56000e19e4b0e4e194b84b31', // HP
            'm.playback': 'autoplay_when_in_view',
            'm.autoplayinview': 100,
          },
@@ -204,7 +203,7 @@ window.maxConfig = {
        }],
  }
 </script>
-<script src="https://s3.amazonaws.com/vdb-cdn-files/prod/max-suite/40.791d975/max.js"></script>
+	<script src="https://s3.amazonaws.com/vdb-cdn-files/prod/max-suite/40.791d975/max.js"></script>
 
 
 <script>
