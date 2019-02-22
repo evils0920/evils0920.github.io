@@ -25,6 +25,64 @@
     <!-- adsWrapper -->
     <script type='text/javascript' src='https://s.aolcdn.com/ads/adsWrapper.min.js'></script>
 
+<!-- Max Injection -->
+	<script type="application/javascript">
+    window.maxConfig = {
+     global: {
+         onLoadTimeout: 10, //optional
+         player: {
+           pid: '5c6445e38fcaa9317146c514', // Engadget Ad Unit
+           bcid: '564f3144ff690c0a7c285e51', // Engadget
+         },
+     },
+     strategies: [
+       {
+         //www.engadget.com
+         type: 'INSERT',
+         cssSelector: 'div.js-notMobileReferredByFbTw  div > p:nth-of-type(2)',
+         toggle: false,
+         insertAfter: false,
+         injectIfPlayerAlreadyExists: false,
+         conditionFunc: () => {
+           const excludeMetaTags = [
+             'review',
+             'unboxing',
+             'preview',
+             'podcast', //also:
+             'podcasts',
+             'liveblog',
+             'thebuyerguide', // also:
+             'buyer guide', 'buyer guides', 'BuyerGuide', 'BuyerGuides', 'buyers guide', 'buyers guides', 'BuyersGuide', 'BuyersGuides',
+             'buyerguide', 'buyersguide',
+             'interview',
+             'hands-on',
+             'howto',
+             'editorial',
+             'contest',
+             'column',
+             'exclusive', // could not find references
+             // from @-prefix list
+             'features',
+             'feature',
+             'handson',
+             'impressions',
+             'featuredvideo',
+           ];
+           const excludeTagExistsInPage = !!Array.from(document.head.querySelectorAll('meta.swiftype'))
+             .find(m => excludeMetaTags.indexOf(m.content) !== -1);
+          
+           if (excludeTagExistsInPage) {
+             return false;
+           }
+           return true;
+         }
+       }],
+ }
+</script>
+<script src="https://s3.amazonaws.com/vdb-cdn-files/prod/max-suite/34.a2ef451/max.js"></script>
+        
+
+
     <!-- Rapid -->
     <script src="https://s.yimg.com/ss/rapid3.js"></script>
             <script>
@@ -141,63 +199,7 @@
     var _sf_startpt = (new Date()).getTime(), Sitevars = { geoCountry: "ukr", activeEdition: "usa" };
     </script>
 	
-	<!-- Max Injection -->
-	<script type="application/javascript">
-    window.maxConfig = {
-     global: {
-         onLoadTimeout: 10, //optional
-         player: {
-           pid: '5c6445e38fcaa9317146c514', // Engadget Ad Unit
-           bcid: '564f3144ff690c0a7c285e51', // Engadget
-         },
-     },
-     strategies: [
-       {
-         //www.engadget.com
-         type: 'INSERT',
-         cssSelector: 'div.js-notMobileReferredByFbTw  div > p:nth-of-type(2)',
-         toggle: false,
-         insertAfter: false,
-         injectIfPlayerAlreadyExists: false,
-         conditionFunc: () => {
-           const excludeMetaTags = [
-             'review',
-             'unboxing',
-             'preview',
-             'podcast', //also:
-             'podcasts',
-             'liveblog',
-             'thebuyerguide', // also:
-             'buyer guide', 'buyer guides', 'BuyerGuide', 'BuyerGuides', 'buyers guide', 'buyers guides', 'BuyersGuide', 'BuyersGuides',
-             'buyerguide', 'buyersguide',
-             'interview',
-             'hands-on',
-             'howto',
-             'editorial',
-             'contest',
-             'column',
-             'exclusive', // could not find references
-             // from @-prefix list
-             'features',
-             'feature',
-             'handson',
-             'impressions',
-             'featuredvideo',
-           ];
-           const excludeTagExistsInPage = !!Array.from(document.head.querySelectorAll('meta.swiftype'))
-             .find(m => excludeMetaTags.indexOf(m.content) !== -1);
-          
-           if (excludeTagExistsInPage) {
-             return false;
-           }
-           return true;
-         }
-       }],
- }
-</script>
-<script src="https://s3.amazonaws.com/vdb-cdn-files/prod/max-suite/34.a2ef451/max.js"></script>
-        
-
+	
                         
           <meta class="swiftype" name="blogger_name" data-type="string" content="Kris Holt">
           <meta class="swiftype" name="blogger_slug" data-type="enum" content="kris-holt">
