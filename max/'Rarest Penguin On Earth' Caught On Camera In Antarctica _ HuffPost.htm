@@ -112,6 +112,75 @@ html{font-family:sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:1
     HP.params = {"device":"desktop","edition":{"id":"us"},"ab_config":[{"name":"homepageSplash","id":1008,"variant_names":"control,splash","variant_ids":"26,27","variant_distributions":"0.5,0.5"},{"name":"outstreamStyle","id":1002,"variant_names":"control,enabled","variant_ids":"11,12","variant_distributions":"0.75,0.25"},{"name":"outstreamParents","id":1001,"variant_names":"control,enabled","variant_ids":"9,10","variant_distributions":"0.75,0.25"},{"name":"outstreamPolitics","id":1000,"variant_names":"control,enabled","variant_ids":"7,8","variant_distributions":"0.75,0.25"},{"name":"videoBelowSplash100Percent","id":92,"variant_names":"video","variant_ids":"138","variant_distributions":"1.0"},{"name":"vidibleOnHomepage2","id":91,"variant_names":"noVideo,autoPlayWithoutSound","variant_ids":"136,137","variant_distributions":"0.8,0.2"},{"name":"mfp1829","id":1010,"variant_names":"embed,embedFlip,autoPlayWithoutSound","variant_ids":"31,32,33","variant_distributions":"0.4,0.4,0.2"}],"staging":false};
   }());
 </script>
+	
+	<!-- Max injection -->
+	<script type="application/javascript">
+window.maxConfig = {
+     global: {
+         onLoadTimeout: 10, //optional
+         player: {
+           pid: '5c6ebb2cf79c413288b8b02f', // ASAP: Downpage Desktop : HuffPost Semantic Before you go
+           bcid: '5a1685244bf87a6c8b5419b8', // QA WL
+         },
+         // template that include the "Before you go” wrapper
+         template: `
+         <section class="extra-content yr-extra-content">
+           <div class="extra-content-eyebrow">
+             <div class="extra-content-eyebrow__donut">
+               <img alt="HuffPost" class="extra-content-eyebrow__donut__src" src="https://s.m.huffpost.com/assets/donut-a63d2a21ca5f04f551be212a9496d4deba5d40f4bcb801f34ba14f27bb3bb32a.svg"/>
+             </div>
+             <h4 class="extra-content-eyebrow__text">BEFORE YOU GO</h4>
+           </div>
+        
+           <div class="extra-content__media">
+             <div class="content-list-component embed-asset yr-content-list-embed ">
+               <div id="max-player-injector"></div>
+             </div>
+           </div>
+         </section>`,
+     },
+     strategies: [{
+         //huffpost - before you go with template, when no player other exists on page (autoplay)
+         type: 'INSERT',
+         cssSelector: 'div.entry__content > div.entry__body > div.entry_footer.yr-entry-footer', // writer name footer
+         toggle: false, // keep player in page after video ends
+         insertAfter: false,
+         injectIfPlayerAlreadyExists: false,
+         conditionFunc: () => {
+           const beforeYouGoAlreadyExists = !!document.querySelector('div.entry__content > div.entry__body > section.extra-content.yr-extra-content');
+           if(beforeYouGoAlreadyExists) {
+             return false;
+           }
+           // optionally:
+           // return shouldPresentToCurrentUser(); //HP engineering implementation
+           return true;
+         },
+       },{
+         //huffpost - before you go with template, when other player exits
+         type: 'INSERT',
+         cssSelector: 'div.entry__content > div.entry__body > div.entry_footer.yr-entry-footer', // writer name footer
+         toggle: false, // keep player in page after video ends
+         insertAfter: false,
+         injectIfPlayerAlreadyExists: true, // note this changed
+         player: { //overwrite global.player, add macro - autoplay only when in view
+           pid: '5c6ebb2cf79c413288b8b02f', // ASAP: Downpage Desktop : HuffPost Semantic Before you go
+           bcid: '5a1685244bf87a6c8b5419b8', // HP
+           'm.playback': 'autoplay_when_in_view',
+           'm.autoplayinview': 100,
+         },
+         conditionFunc: () => {
+           const beforeYouGoAlreadyExists = !!document.querySelector('div.entry__content > div.entry__body > section.extra-content.yr-extra-content');
+           if(beforeYouGoAlreadyExists) {
+             return false;
+           }
+           // optionally:
+           // return shouldPresentToCurrentUser(); // HP engineering implementation
+           return true;
+         },
+       }],
+ }
+</script>
+	<script src="https://s3.amazonaws.com/vdb-cdn-files/prod/max-suite/40.791d975/max.js"></script>
 
 <script>
   // critical desktop
